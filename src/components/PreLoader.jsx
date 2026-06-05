@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-interface PreLoaderProps {
-  onEnter: () => void;
-}
-
-export const PreLoader: React.FC<PreLoaderProps> = ({ onEnter }) => {
+export const PreLoader = ({ onEnter }) => {
   const [progress, setProgress] = useState(0);
   const [loadingComplete, setLoadingComplete] = useState(false);
 

@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 
-interface HeaderProps {
-  onMenuToggle: () => void;
-  onHireMeClick: () => void;
-  onNavigate: (sectionId: string) => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({
+export const Header = ({
   onMenuToggle,
   onHireMeClick,
   onNavigate,

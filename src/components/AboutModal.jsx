@@ -1,12 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-interface AboutModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
+export const AboutModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (

@@ -1,19 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-interface StaggeredMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onNavigate: (sectionId: string) => void;
-}
-
-export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
+export const StaggeredMenu = ({
   isOpen,
   onClose,
   onNavigate,
 }) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef(null);
+  const overlayRef = useRef(null);
 
   useEffect(() => {
     // GSAP context to ensure proper scoping and cleanup on unmount
@@ -119,7 +113,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     return () => ctx.revert();
   }, [isOpen]);
 
-  const handleLinkClick = (sectionId: string) => {
+  const handleLinkClick = (sectionId) => {
     onClose();
     setTimeout(() => {
       onNavigate(sectionId);

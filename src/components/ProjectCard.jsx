@@ -1,23 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 
-interface Project {
-  id: string;
-  index: string;
-  name: string;
-  description: string;
-  tech: string;
-  videoSrc: string;
-  badge?: string;
-}
-
-interface ProjectCardProps {
-  project: Project;
-  idx: number;
-  onViewCaseStudy: () => void;
-}
-
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectCard = ({
   project,
   idx,
   onViewCaseStudy,
@@ -35,7 +19,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7.5deg', '-7.5deg']);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7.5deg', '7.5deg']);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;

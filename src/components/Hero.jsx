@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 
-interface HeroProps {
-  onExploreClick: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
+export const Hero = ({ onExploreClick }) => {
   const { scrollY } = useScroll();
   // Parallax effects for text and video
   const yText = useTransform(scrollY, [0, 800], [0, -120]);

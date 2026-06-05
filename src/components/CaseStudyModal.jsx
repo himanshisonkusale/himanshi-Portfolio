@@ -1,21 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-interface CaseStudyModalProps {
-  projectId: string | null;
-  onClose: () => void;
-}
-
-interface CaseStudyDetails {
-  title: string;
-  tech: string;
-  overview: string;
-  metrics: { label: string; value: string }[];
-  snippetTitle: string;
-  snippet: string;
-}
-
-const CASE_STUDIES: Record<string, CaseStudyDetails> = {
+const CASE_STUDIES = {
   'helios-engine': {
     title: 'HELIOS GRAPHICS ENGINE',
     tech: 'RUST / WEBASSEMBLY / WEBGL 2',
@@ -99,7 +85,7 @@ pub fn render_frame(&mut self) -> Result<(), JsValue> {
   },
 };
 
-export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClose }) => {
+export const CaseStudyModal = ({ projectId, onClose }) => {
   if (!projectId) return null;
 
   const data = CASE_STUDIES[projectId];

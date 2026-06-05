@@ -1,19 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  alpha: number;
-  size: number;
-  decay: number;
-}
-
-export const RippleTrail: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+export const RippleTrail = () => {
+  const canvasRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0, isMoved: false });
-  const particlesRef = useRef<Particle[]>([]);
+  const particlesRef = useRef([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -31,7 +21,7 @@ export const RippleTrail: React.FC = () => {
     window.addEventListener('resize', resizeCanvas);
 
     // Track mouse coordinates
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       const mouse = mouseRef.current;
       mouse.targetX = e.clientX;
       mouse.targetY = e.clientY;
@@ -66,8 +56,8 @@ export const RippleTrail: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Animation Loop
-    let animationFrameId: number;
-    const lerp = (start: number, end: number, amt: number) => (1 - amt) * start + amt * end;
+    let animationFrameId;
+    const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);

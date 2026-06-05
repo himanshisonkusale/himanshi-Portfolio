@@ -24,10 +24,10 @@ function App() {
   const [aboutOpen, setAboutOpen] = useState(false);
 
   // Helper State to identify which project modal to display
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
 
   // Smooth navigation scroll handler
-  const handleNavigate = (sectionId: string) => {
+  const handleNavigate = (sectionId) => {
     // If navigating to 'about', open the modal
     if (sectionId === 'about') {
       setAboutOpen(true);
@@ -54,7 +54,7 @@ function App() {
     }
   };
 
-  const handleViewProject = (projectId: string) => {
+  const handleViewProject = (projectId) => {
     setSelectedProjectId(projectId);
     setProjectOpen(true);
   };

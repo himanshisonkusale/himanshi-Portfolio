@@ -1,10 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 
-interface TechStackProps {
-  highlighted?: boolean;
-}
-
 // Restructured the data to fit a logical Architecture Flowchart (Top-Down)
 const ARCHITECTURE_LAYERS = [
   {
@@ -45,8 +41,8 @@ const ARCHITECTURE_LAYERS = [
   },
 ];
 
-const FlowNode = ({ layer, index }: { layer: typeof ARCHITECTURE_LAYERS[0]; index: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
+const FlowNode = ({ layer, index }) => {
+  const ref = useRef(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -56,7 +52,7 @@ const FlowNode = ({ layer, index }: { layer: typeof ARCHITECTURE_LAYERS[0]; inde
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['5deg', '-5deg']);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-5deg', '5deg']);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
@@ -123,7 +119,7 @@ const FlowNode = ({ layer, index }: { layer: typeof ARCHITECTURE_LAYERS[0]; inde
 
           {/* Right Column: Tags */}
           <div className="md:w-2/3 flex flex-wrap gap-2 md:gap-3 items-center content-center" style={{ transform: 'translateZ(40px)' }}>
-            {layer.tags.map((tag: string, i: number) => (
+            {layer.tags.map((tag, i) => (
               <motion.span
                 key={tag}
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -173,7 +169,7 @@ const FlowNode = ({ layer, index }: { layer: typeof ARCHITECTURE_LAYERS[0]; inde
   );
 };
 
-export const TechStack: React.FC<TechStackProps> = ({ highlighted }) => {
+export const TechStack = ({ highlighted }) => {
   return (
     <section
       id="tech"

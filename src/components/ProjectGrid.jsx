@@ -2,17 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ProjectCard } from './ProjectCard';
 
-interface Project {
-  id: string;
-  index: string;
-  name: string;
-  description: string;
-  tech: string;
-  videoSrc: string;
-  badge?: string;
-}
-
-const PROJECTS_DATA: Project[] = [
+const PROJECTS_DATA = [
   {
     id: 'finbuzz-ai',
     index: '01',
@@ -48,11 +38,7 @@ const PROJECTS_DATA: Project[] = [
   },
 ];
 
-interface ProjectGridProps {
-  onViewProject: (projectId: string) => void;
-}
-
-export const ProjectGrid: React.FC<ProjectGridProps> = ({ onViewProject }) => {
+export const ProjectGrid = ({ onViewProject }) => {
   return (
     <section
       id="projects"

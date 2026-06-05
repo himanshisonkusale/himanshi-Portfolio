@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-interface FooterProps {
-  onNavigate: (sectionId: string) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer = ({ onNavigate }) => {
   return (
     <footer className="relative bg-[#030305] pt-24 pb-12 border-t border-white/5 overflow-hidden">
       {/* Subtle Glow at the top border */}

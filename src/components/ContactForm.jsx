@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-interface ContactFormProps {
-  highlighted?: boolean;
-}
-
-export const ContactForm: React.FC<ContactFormProps> = ({ highlighted }) => {
+export const ContactForm = ({ highlighted }) => {
 
   const SOCIAL_LINKS = [
     {
