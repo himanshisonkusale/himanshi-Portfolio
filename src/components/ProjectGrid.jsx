@@ -21,20 +21,20 @@ const PROJECTS_DATA = [
     videoSrc: '/videos/project-interviewiq.mp4',
   },
   {
-    id: 'skycrate',
+    id: 'nexusflowcontroller',
     index: '03',
-    name: 'SKYCRATE',
+    name: 'NEXUSFLOWCONTROLLER',
+    description: 'Distributed rate-limiting and traffic-shaping mesh engineered with atomic Redis Lua scripts to eliminate race conditions. Horizontally scaled 3-node cluster built with Nginx, Docker, and Prometheus delivering sub-12ms p95 latency.',
+    tech: 'Distributed Systems // Redis // Nginx // Docker',
+    videoSrc: '/videos/Tech_dashboard_NexusFlow.mp4',
+  },
+  {
+    id: 'skycrate',
+    index: '04',
+    name: 'SKYCRATE PROJECT',
     description: 'Distributed, fault-tolerant cloud storage infrastructure replicating highly scalable AWS Drive mechanisms.',
     tech: 'Cloud Automation // AWS S3 // Distributed Systems // React.js',
     videoSrc: '/videos/project-skycrate.mp4',
-  },
-  {
-    id: 'smartconnect',
-    index: '04',
-    name: 'SMARTCONNECT WITH LOSTLOOP',
-    description: 'Resilient, fault-tolerant network orchestration layer optimized for real-time edge computing.',
-    tech: 'System Design // IoT Edge // Fault Tolerance // MongoDB',
-    videoSrc: '/videos/project-smartconnect.mp4',
   },
 ];
 
