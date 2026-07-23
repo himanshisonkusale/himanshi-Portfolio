@@ -29,12 +29,12 @@ const PROJECTS_DATA = [
     videoSrc: '/videos/Tech_dashboard_NexusFlow.mp4',
   },
   {
-    id: 'skycrate',
+    id: 'multi-agent-rag',
     index: '04',
-    name: 'SKYCRATE PROJECT',
-    description: 'Distributed, fault-tolerant cloud storage infrastructure replicating highly scalable AWS Drive mechanisms.',
-    tech: 'Cloud Automation // AWS S3 // Distributed Systems // React.js',
-    videoSrc: '/videos/project-skycrate.mp4',
+    name: 'MULTI-AGENT-RAG-POWERED SYSTEM',
+    description: 'An advanced Multi-Agent system powered by RAG (Retrieval-Augmented Generation) for intelligent document processing and search.',
+    tech: 'Multi-Agent Systems // RAG // LLMs // Generative AI',
+    videoSrc: '/videos/AI_robot.mp4',
   },
 ];
 

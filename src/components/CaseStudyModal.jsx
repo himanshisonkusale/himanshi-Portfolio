@@ -219,6 +219,29 @@ pub fn render_frame(&mut self) -> Result<(), JsValue> {
       }
     ]
   },
+  'multi-agent-rag': {
+    title: 'MULTI-AGENT-RAG-POWERED SYSTEM',
+    tech: 'LLMS / RAG / MULTI-AGENT / AI',
+    metrics: [
+      { label: 'ARCHITECTURE', value: 'Multi-Agent' },
+      { label: 'SEARCH', value: 'RAG Powered' },
+      { label: 'EFFICIENCY', value: 'High' },
+    ],
+    sections: [
+      {
+        title: 'OVERVIEW',
+        content: [
+          'An advanced Multi-Agent system powered by RAG (Retrieval-Augmented Generation) for intelligent document processing, dynamic querying, and automated workflows. It leverages state-of-the-art LLMs to orchestrate multiple specialized agents working collaboratively to retrieve contextually relevant data and synthesize accurate responses.'
+        ]
+      },
+      {
+        title: 'TECH STACK',
+        content: [
+          'Python, LangChain, Vector Databases, Generative AI, Multiple LLM Agents'
+        ]
+      }
+    ]
+  },
 };
 
 export const CaseStudyModal = ({ projectId, onClose }) => {
